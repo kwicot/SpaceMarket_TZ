@@ -8,14 +8,15 @@ namespace SpaceMarket.Core.Scipts.Obstacles
     public class MovementController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed;
-        [SerializeField] private float horizontalSpeed;
 
         private Rigidbody _rigidbody;
 
         private void Start()
         {
             if (!TryGetComponent(out _rigidbody))
-                throw new NullReferenceException($"Cant find rigidbody on {name}");
+                throw new NullReferenceException($"Cant find rigidBody on {name}");
+
+            _rigidbody.velocity = new Vector3(0, 0, moveSpeed * Time.fixedDeltaTime);
         }
         
 
@@ -25,7 +26,6 @@ namespace SpaceMarket.Core.Scipts.Obstacles
             var dif = moveSpeed = velocity.magnitude;
             var force = velocity * dif;
             _rigidbody.AddForce(force);
-
         }
     }
 }
