@@ -50,7 +50,6 @@ namespace SpaceMarket.Core.Scipts.Obstacles
                 
                 var playerPositionZ = playerTransform.position.z;
                 var diff = Mathf.Abs(playerPositionZ - _spawnPosition.z);
-                Debug.Log(diff);
                 if ( diff < _spawnOffset)
                 {
                     DeactivateLastPlatform();
