@@ -1,6 +1,7 @@
 ﻿using System;
+using SpaceMarket.Core.Scipts.Obstacles.UI;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Zenject;
 
 namespace SpaceMarket.Core.Scipts.Obstacles
 {
@@ -15,24 +16,29 @@ namespace SpaceMarket.Core.Scipts.Obstacles
 
         private Rigidbody _rigidbody;
 
+        private IMovementInputService _movementInputService;
+
         private float _positionX;
         private float _positionZ;
-        private float _mouseInputOffset;
-        
+
+
+        [Inject]
+        void Construct(IMovementInputService movementInputService)
+        {
+            _movementInputService = movementInputService;
+        }
         private void Start()
         {
             if (!TryGetComponent(out _rigidbody))
                 throw new NullReferenceException($"Cant find rigidBody on {name}");
-
-            _mouseInputOffset = Screen.width / 2f;
         }
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (levelManager.IsPlay)
             {
-                _positionX = Input.mousePosition.x - _mouseInputOffset;
-                _positionX *= multiplier;
+                _movementInputService.UpdateInput();
+                _positionX = _movementInputService.Horizontal;
             }
         }
 
