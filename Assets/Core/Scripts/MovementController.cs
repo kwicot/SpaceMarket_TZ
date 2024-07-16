@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using SpaceMarket.Core.Scipts.Obstacles.UI;
 using UnityEngine;
 using Zenject;
@@ -9,7 +10,6 @@ namespace SpaceMarket.Core.Scipts.Obstacles
     [RequireComponent(typeof(Rigidbody))]
     public class MovementController : MonoBehaviour
     {
-        [SerializeField] private LevelManager levelManager;
         [SerializeField] private float moveSpeed;
         [SerializeField] private float multiplier;
         [SerializeField] private float positionY;
@@ -17,15 +17,18 @@ namespace SpaceMarket.Core.Scipts.Obstacles
         private Rigidbody _rigidbody;
 
         private IMovementInputService _movementInputService;
+        private LevelService _levelService;
+
 
         private float _positionX;
         private float _positionZ;
 
 
         [Inject]
-        void Construct(IMovementInputService movementInputService)
+        void Construct(IMovementInputService movementInputService, LevelService levelService)
         {
             _movementInputService = movementInputService;
+            _levelService = levelService;
         }
         private void Start()
         {
@@ -35,7 +38,7 @@ namespace SpaceMarket.Core.Scipts.Obstacles
 
         private void Update()
         {
-            if (levelManager.IsPlay)
+            if (_levelService.IsPlaying)
             {
                 _movementInputService.UpdateInput();
                 _positionX = _movementInputService.Horizontal;
@@ -44,7 +47,7 @@ namespace SpaceMarket.Core.Scipts.Obstacles
 
         private void FixedUpdate()
         {
-            if (levelManager.IsPlay)
+            if (_levelService.IsPlaying)
             {
                 _positionZ = transform.position.z;
                 _positionZ += moveSpeed * Time.fixedDeltaTime;

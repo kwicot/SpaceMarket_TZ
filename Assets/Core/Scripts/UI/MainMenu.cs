@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace SpaceMarket.Core.Scipts.Obstacles.UI
+namespace SpaceMarket.Core.Scipts.UI
 {
     public class MainMenu : MonoBehaviour
     {

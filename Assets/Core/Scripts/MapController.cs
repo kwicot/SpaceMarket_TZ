@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using ToolBox.Pools;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace SpaceMarket.Core.Scipts.Obstacles
 {
     public class MapController : MonoBehaviour
     {
-        [SerializeField] private LevelManager levelManager;
+        [FormerlySerializedAs("levelManager")] [SerializeField] private LevelService levelService;
         [SerializeField] private GameObject[] platformPrefabs;
         [SerializeField] private GameObject freePlatformPrefab;
         [SerializeField] private int freePlatformsCount;
@@ -23,8 +24,6 @@ namespace SpaceMarket.Core.Scipts.Obstacles
 
         private Vector3 _spawnPosition;
 
-
-        private float _score;
         private float _spawnOffset;
         
         private void Start()
@@ -39,15 +38,12 @@ namespace SpaceMarket.Core.Scipts.Obstacles
             _platforms = new List<Rigidbody>();
             
             SpawnFirstPlatforms();
-            levelManager.IsPlay = true;
         }
 
         private void FixedUpdate()
         {
-            if (levelManager.IsPlay)
+            if (levelService.IsPlaying)
             {
-                _score += Time.fixedDeltaTime;
-                
                 var playerPositionZ = playerTransform.position.z;
                 var diff = Mathf.Abs(playerPositionZ - _spawnPosition.z);
                 if ( diff < _spawnOffset)

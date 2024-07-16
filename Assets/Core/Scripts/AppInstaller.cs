@@ -1,16 +1,12 @@
-﻿using SpaceMarket.Core.Scipts.Obstacles.UI;
+﻿using SpaceMarket.Core.Scipts.Popup.UI;
 using Zenject;
 
-namespace SpaceMarket.Core.Scipts.Obstacles
+namespace SpaceMarket.Core.Scipts
 {
     public class AppInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {
-            Container.Bind<PopUpWindow>()
-                .FromNew().AsSingle();
-            
-            Container.Bind<IMovementInputService>().
         }
     }
 }
