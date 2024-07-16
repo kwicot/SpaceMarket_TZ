@@ -1,9 +1,9 @@
 ﻿using SpaceMarket.Core.Scipts;
+using ToolBox.Pools;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
-namespace Core.Scripts
+namespace Core.Scripts.Collectable
 {
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
     public class Coin : MonoBehaviour, ICollectableItem
@@ -15,10 +15,10 @@ namespace Core.Scripts
         
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log($"Collision with {other.gameObject.name}");
-            if (other.gameObject.CompareTag("Obstacle"))
+            if (other.gameObject.CompareTag("Player"))
             {
-                _levelService.OnPlayerHit();
+                _levelService.OnPlayerCollect(this);
+                gameObject.Release();
             }
         }
 

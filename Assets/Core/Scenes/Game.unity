@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 1337865627}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,7 +247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926c3d53b20a47ba9a3a7ab121e880b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
   moveSpeed: 2
   multiplier: 2
   positionY: 0.51
@@ -357,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b413a6108bf84e54ba510675893622a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelManager: {fileID: 412021314}
 --- !u!1 &1448412656
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c2bf6ac5b74f28a787e894d264e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 412021314}
+  levelService: {fileID: 412021314}
   platformPrefabs:
   - {fileID: 6466175276430682159, guid: 4a76658351cf2c244813e3c4bc7457b6, type: 3}
   - {fileID: 3152460885543840844, guid: 7e32c53f98ffa074e8da2d9b7389bf98, type: 3}

@@ -1,5 +1,4 @@
-﻿using SpaceMarket.Core.Scipts.Popup.UI;
-using Zenject;
+﻿using Zenject;
 
 namespace SpaceMarket.Core.Scipts
 {

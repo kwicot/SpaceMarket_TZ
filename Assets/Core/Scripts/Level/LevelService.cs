@@ -1,4 +1,4 @@
-﻿using Core.Scripts;
+﻿using Core.Scripts.Collectable;
 using UnityEngine;
 using UnityEngine.Events;
 

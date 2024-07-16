@@ -10,7 +10,6 @@ namespace SpaceMarket.Core.Scipts.Obstacles
         [Inject] private LevelService _levelService;
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log($"Collision with {other.gameObject.name}");
             if (other.gameObject.CompareTag("Obstacle"))
             {
                 _levelService.OnPlayerHit();
