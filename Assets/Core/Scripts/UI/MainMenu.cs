@@ -1,4 +1,5 @@
-﻿using SpaceMarket.Core.Scipts.Extensions;
+﻿using System;
+using SpaceMarket.Core.Scipts.Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,6 +20,12 @@ namespace SpaceMarket.Core.Scripts.UI
             
             exitButton.RemoveAllListeners();
             exitButton.AddListener(Exit);
+        }
+
+        private void OnDestroy()
+        {
+            playButton.RemoveAllListeners();
+            exitButton.RemoveAllListeners();
         }
 
 

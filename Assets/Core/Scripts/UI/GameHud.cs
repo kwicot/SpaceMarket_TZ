@@ -1,4 +1,5 @@
-﻿using SpaceMarket.Core.Scipts.Extensions;
+﻿using System;
+using SpaceMarket.Core.Scipts.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -22,9 +23,18 @@ namespace SpaceMarket.Core.Scripts.UI
 
         private void Start()
         {
+            pauseButton.RemoveAllListeners();
+            pauseButton.AddListener(OnPauseClick);
+            
             menuButton.RemoveAllListeners();
-            menuButton.AddListener(OnPauseClick);
+            menuButton.AddListener(OnMenuClick);
             _levelService.OnScoreChanged += OnScoreChanged;
+        }
+
+        private void OnDestroy()
+        {
+            pauseButton.RemoveAllListeners();
+            menuButton.RemoveAllListeners();
         }
 
         private void OnScoreChanged()
@@ -44,6 +54,11 @@ namespace SpaceMarket.Core.Scripts.UI
                 _levelService.Play();
                 pauseButton.image.sprite = pauseSprite;
             }
+        }
+
+        void OnMenuClick()
+        {
+            
         }
     }
 }

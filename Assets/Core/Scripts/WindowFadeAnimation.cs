@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Threading.Tasks;
 using DG.Tweening;
-using SpaceMarket.Core.Scipts.Extensions;
 using SpaceMarket.Core.Scipts.UI;
+using SpaceMarket.Core.Scripts.Extensions;
 using UnityEngine;
 
 namespace Core.Scripts
