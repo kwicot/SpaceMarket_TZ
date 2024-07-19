@@ -19,7 +19,7 @@ namespace Core.Scripts.Collectable
             _spawnController = spawnController;
         }
 
-        private void Start()
+        private void OnEnable()
         {
             int r = Random.Range(0, 100);
             if (r >= spawnChance)
@@ -29,7 +29,5 @@ namespace Core.Scripts.Collectable
                 obj.Enable();
             }
         }
-        
-        
     }
 }

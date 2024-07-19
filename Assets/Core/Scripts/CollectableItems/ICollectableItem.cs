@@ -2,6 +2,6 @@
 {
     public interface ICollectableItem
     {
-        public int Score { get;}
+        public int ScoreGain { get;}
     }
 }
