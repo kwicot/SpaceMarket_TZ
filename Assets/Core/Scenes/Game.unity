@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b6481cc5194532a43654c708094429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableSpawnController: {fileID: 0}
+  collectableSpawnController: {fileID: 826930684}
 --- !u!4 &198926956
 Transform:
   m_ObjectHideFlags: 0

@@ -42,6 +42,7 @@ namespace SpaceMarket.Core.Scripts.Obstacles
 
         private void FixedUpdate()
         {
+            Debug.Log(levelService.name);
             if (levelService.IsPlaying)
             {
                 var playerPositionZ = playerTransform.position.z;

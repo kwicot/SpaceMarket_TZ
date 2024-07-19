@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Core.Scripts.Collectable
 {
     public class CollectableSpawnerInstaller : MonoInstaller
     {
-        [SerializeField] private CollectableSpawnController collectableSpawnController;
+        [FormerlySerializedAs("collectableSpawnController")] [SerializeField] private CollectableSpawnService collectableSpawnService;
         public override void InstallBindings()
         {
-            Container.Bind<CollectableSpawnController>().FromInstance(collectableSpawnController).AsSingle();
+            Container.Bind<CollectableSpawnService>().FromInstance(collectableSpawnService).AsSingle().NonLazy();
         }
     }
 }

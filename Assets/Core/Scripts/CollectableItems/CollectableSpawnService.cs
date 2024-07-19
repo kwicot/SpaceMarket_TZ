@@ -7,18 +7,27 @@ using Random = System.Random;
 
 namespace Core.Scripts.Collectable
 {
-    public class CollectableSpawnController : MonoBehaviour
+    public class CollectableSpawnService : MonoBehaviour
     {
         [SerializeField] private CollectableSpawnData[] spawnData;
 
         private List<int> _randomList;
         private Random _random;
 
+        private bool _initialized = false;
+
         private void Start()
+        {
+            if(!_initialized)
+                Initialize();
+        }
+
+        void Initialize()
         {
             _random = new Random((int)DateTime.Now.TimeOfDay.TotalMilliseconds);
             Randomize();
             GeneratePool();
+            _initialized = true;
         }
 
         private void GeneratePool()
@@ -29,6 +38,9 @@ namespace Core.Scripts.Collectable
             }
         }
 
+        /// <summary>
+        /// Далеко не самий найкращий спосіб рандомних вагів, дла прототипу підійде
+        /// </summary>
         private void Randomize()
         {
             _randomList = new List<int>();
@@ -46,6 +58,10 @@ namespace Core.Scripts.Collectable
         
         public GameObject GetRandom()
         {
+            Debug.Log("Get Random");
+            if(!_initialized)
+                Initialize();
+            
             int r = _random.Next(0, _randomList.Count);
             int index = _randomList[r];
 
