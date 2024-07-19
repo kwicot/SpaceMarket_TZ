@@ -117,7 +117,7 @@ namespace SpaceMarket.Core.Scipts.Obstacles
 
         Rigidbody GetBody(GameObject prefab, Vector3 position)
         {
-            var body = prefab.Reuse(position, Quaternion.identity);
+            var body = prefab.Reuse(position, Quaternion.identity,this.transform);
             body.SetActive(true);
             return body.GetComponent<Rigidbody>();
         }

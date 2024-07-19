@@ -1,4 +1,4 @@
-﻿using System;
+﻿using SpaceMarket.Core.Scipts.Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,15 +9,22 @@ namespace SpaceMarket.Core.Scipts.UI
     {
         [SerializeField] private Button playButton;
         [SerializeField] private Button exitButton;
+        [SerializeField] private SceneReference gameScene;
 
-        private async void Start()
+
+        private void Start()
         {
+            playButton.RemoveAllListeners();
+            playButton.AddListener(Play);
             
+            exitButton.RemoveAllListeners();
+            exitButton.AddListener(Exit);
         }
+
 
         public void Play()
         {
-            SceneManager.LoadSceneAsync("Game");
+            SceneManager.LoadSceneAsync(gameScene);
         }
 
         public void Exit()

@@ -9,7 +9,6 @@ namespace SpaceMarket.Core.Scipts.Popup.UI
         [SerializeField] private GameObject rootPanel;
         [SerializeField] CanvasGroup canvasGroup;
         [SerializeField] float fadeDuration = 0.5f;
-        [SerializeField] Animation animation;
         
         public void Show()
         {

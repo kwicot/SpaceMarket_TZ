@@ -7,8 +7,7 @@ namespace SpaceMarket.Core.Scipts
     public class LevelService : MonoBehaviour
     {
         private int _score;
-        bool _isPlaying = false;
-
+        private bool _isPlaying = false;
         
         public int Score
         {
@@ -19,7 +18,6 @@ namespace SpaceMarket.Core.Scipts
                 OnScoreChanged?.Invoke();
             }
         }
-
         public bool IsPlaying
         {
             get { return _isPlaying; }
@@ -30,8 +28,6 @@ namespace SpaceMarket.Core.Scipts
             }
         }
         
-        
-        
         public UnityAction OnPlayingStateChanged;
         public UnityAction OnScoreChanged;
 
@@ -39,6 +35,16 @@ namespace SpaceMarket.Core.Scipts
         public void Play()
         {
             IsPlaying = true;
+        }
+
+        public void Pause()
+        {
+            IsPlaying = false;
+        }
+
+        public void ReturnToMenu()
+        {
+            
         }
         
         public void OnPlayerHit()
@@ -49,7 +55,7 @@ namespace SpaceMarket.Core.Scipts
 
         public void OnPlayerCollect(ICollectableItem item)
         {
-            Score += item.Score;
+            Score += item.ScoreGain;
         }
     }
 }

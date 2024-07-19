@@ -1,6 +1,7 @@
 ﻿using SpaceMarket.Core.Scipts;
 using ToolBox.Pools;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Core.Scripts.Collectable
@@ -8,8 +9,8 @@ namespace Core.Scripts.Collectable
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
     public class Coin : MonoBehaviour, ICollectableItem
     {
-        [SerializeField] int score;
-        public int Score => score;
+        [SerializeField] int scoreGain;
+        public int ScoreGain => scoreGain;
 
         [Inject]private LevelService _levelService;
         
