@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-namespace SpaceMarket.Core.Scipts.Obstacles
+namespace SpaceMarket.Core.Scripts.Obstacles
 {
     public class MapController : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SpaceMarket.Core.Scipts.Extensions
+namespace SpaceMarket.Core.Scripts.Extensions
 {
     public static class ListExtension
     {

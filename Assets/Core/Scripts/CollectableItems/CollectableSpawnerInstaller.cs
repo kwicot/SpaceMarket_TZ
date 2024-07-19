@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Core.Scripts.Collectable
 {
-    public class CollectableItemsInstaller : MonoInstaller
+    public class CollectableSpawnerInstaller : MonoInstaller
     {
         [SerializeField] private CollectableSpawnController collectableSpawnController;
         public override void InstallBindings()

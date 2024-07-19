@@ -1,4 +1,4 @@
-﻿namespace SpaceMarket.Core.Scipts.Popup.UI
+﻿namespace SpaceMarket.Core.Scripts.Popup.UI
 {
     public interface IPopupService
     {

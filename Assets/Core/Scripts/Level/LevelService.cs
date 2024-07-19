@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SpaceMarket.Core.Scipts
+namespace SpaceMarket.Core.Scripts
 {
     public class LevelService : MonoBehaviour
     {

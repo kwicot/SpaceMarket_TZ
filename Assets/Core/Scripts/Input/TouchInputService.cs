@@ -2,7 +2,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace SpaceMarket.Core.Scipts.Obstacles.UI
+namespace SpaceMarket.Core.Scripts.Obstacles.UI
 {
     public class TouchInputService : MonoBehaviour, IMovementInputService
     {

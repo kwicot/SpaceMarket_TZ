@@ -1,4 +1,4 @@
-﻿namespace SpaceMarket.Core.Scipts.Obstacles
+﻿namespace SpaceMarket.Core.Scripts.Obstacles
 {
     public class GPSManager
     {

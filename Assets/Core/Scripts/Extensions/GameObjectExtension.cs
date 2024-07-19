@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SpaceMarket.Core.Scipts.Extensions
+namespace SpaceMarket.Core.Scripts.Extensions
 {
     public static class GameObjectExtension
     {

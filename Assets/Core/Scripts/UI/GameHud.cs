@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SpaceMarket.Core.Scipts.UI
+namespace SpaceMarket.Core.Scripts.UI
 {
     public class GameHud : MonoBehaviour
     {

@@ -1,8 +1,8 @@
 ﻿using DG.Tweening;
-using SpaceMarket.Core.Scipts.Extensions;
+using SpaceMarket.Core.Scripts.Extensions;
 using UnityEngine;
 
-namespace SpaceMarket.Core.Scipts.Popup.UI
+namespace SpaceMarket.Core.Scripts.Popup.UI
 {
     public class PopupLoadingService : MonoBehaviour, IPopupService
     {

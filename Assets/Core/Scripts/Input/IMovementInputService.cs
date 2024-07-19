@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SpaceMarket.Core.Scipts.Obstacles.UI
+namespace SpaceMarket.Core.Scripts.Obstacles.UI
 {
     public interface IMovementInputService
     {

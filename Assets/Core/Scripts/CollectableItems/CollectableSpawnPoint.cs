@@ -1,5 +1,5 @@
 ﻿using System;
-using SpaceMarket.Core.Scipts.Extensions;
+using SpaceMarket.Core.Scripts.Extensions;
 using ToolBox.Pools;
 using UnityEngine;
 using Zenject;

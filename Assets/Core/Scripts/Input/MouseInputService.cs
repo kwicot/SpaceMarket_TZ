@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace SpaceMarket.Core.Scipts.Obstacles.UI
+namespace SpaceMarket.Core.Scripts.Obstacles.UI
 {
     public class MouseInputService : MonoBehaviour, IMovementInputService
     {

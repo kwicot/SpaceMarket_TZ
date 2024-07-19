@@ -6,9 +6,9 @@ using Sequence = DG.Tweening.Sequence;
 using UnityEditor;
 #endif
 
-namespace SpaceMarket.Core.Scipts.Obstacles
+namespace SpaceMarket.Core.Scripts.Animations
 {
-    public class LinerMover : MonoBehaviour
+    public class LinerMovingAnimation : MonoBehaviour
     {
         [SerializeField] private Vector3 firstLocalPoint;
         [SerializeField] private Vector3 secondLocalPoint;
@@ -44,14 +44,14 @@ namespace SpaceMarket.Core.Scipts.Obstacles
 
 #if UNITY_EDITOR
 
-        [CustomEditor(typeof(LinerMover))]
+        [CustomEditor(typeof(LinerMovingAnimation))]
         class LinerMoverEditor : Editor
         {
             public override void OnInspectorGUI()
             {
                 DrawDefaultInspector();
 
-                LinerMover linerObstacle = (LinerMover)target;
+                LinerMovingAnimation linerObstacle = (LinerMovingAnimation)target;
 
                 if (GUILayout.Button("Set first point"))
                     linerObstacle.firstLocalPoint = Selection.activeGameObject.transform.position;

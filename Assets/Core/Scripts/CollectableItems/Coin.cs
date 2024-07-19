@@ -1,4 +1,4 @@
-﻿using SpaceMarket.Core.Scipts;
+﻿using SpaceMarket.Core.Scripts;
 using ToolBox.Pools;
 using UnityEngine;
 using Zenject;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace SpaceMarket.Core.Scipts.Popup.UI
+namespace SpaceMarket.Core.Scripts.Popup.UI
 {
     public class PopupServiceInstaller : MonoInstaller
     {

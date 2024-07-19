@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
-using SpaceMarket.Core.Scipts.Obstacles.UI;
+using SpaceMarket.Core.Scripts.Obstacles.UI;
 using UnityEngine;
 using Zenject;
 
-namespace SpaceMarket.Core.Scipts.Obstacles
+namespace SpaceMarket.Core.Scripts.Obstacles
 {
     
     [RequireComponent(typeof(Rigidbody))]

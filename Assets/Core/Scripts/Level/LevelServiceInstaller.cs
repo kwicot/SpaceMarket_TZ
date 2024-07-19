@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace SpaceMarket.Core.Scipts
+namespace SpaceMarket.Core.Scripts
 {
     public class LevelServiceInstaller : MonoInstaller
     {

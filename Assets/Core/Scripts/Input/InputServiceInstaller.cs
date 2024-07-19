@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace SpaceMarket.Core.Scipts.Obstacles.UI
+namespace SpaceMarket.Core.Scripts.Obstacles.UI
 {
     public class InputServiceInstaller : MonoInstaller
     {

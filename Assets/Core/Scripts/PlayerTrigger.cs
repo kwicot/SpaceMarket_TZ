@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace SpaceMarket.Core.Scipts.Obstacles
+namespace SpaceMarket.Core.Scripts.Obstacles
 {
     [RequireComponent(typeof(Collider), typeof(Rigidbody))]
     public class PlayerTrigger : MonoBehaviour
