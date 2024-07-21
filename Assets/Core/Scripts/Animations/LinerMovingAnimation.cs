@@ -25,6 +25,21 @@ namespace SpaceMarket.Core.Scripts.Animations
         private void Start()
         {
             _levelService.OnPlayingStateChanged += OnLevelStateChange;
+            
+            transform.localPosition = secondLocalPoint;
+            _sequence = DOTween.Sequence();
+            _sequence.Pause();
+            
+            _sequence.Append(transform.DOLocalMove(firstLocalPoint, moveSpeed).SetEase(ease));
+            _sequence.AppendInterval(moveInterval);
+            
+            _sequence.Append(transform.DOLocalMove(secondLocalPoint, moveSpeed).SetEase(ease));
+            _sequence.AppendInterval(moveInterval);
+            
+            _sequence.SetLoops(-1);
+
+            if (_levelService.IsPlaying)
+                _sequence.Play();
         }
 
         private void OnLevelStateChange()
@@ -37,16 +52,8 @@ namespace SpaceMarket.Core.Scripts.Animations
 
         private void OnEnable()
         {
-            transform.localPosition = secondLocalPoint;
-            _sequence = DOTween.Sequence();
-            
-            _sequence.Append(transform.DOLocalMove(firstLocalPoint, moveSpeed).SetEase(ease));
-            _sequence.AppendInterval(moveInterval);
-            
-            _sequence.Append(transform.DOLocalMove(secondLocalPoint, moveSpeed).SetEase(ease));
-            _sequence.AppendInterval(moveInterval);
-            
-            _sequence.SetLoops(-1);
+            if (_levelService.IsPlaying)
+                _sequence.Play();
         }
 
         private void OnDestroy()
@@ -57,7 +64,7 @@ namespace SpaceMarket.Core.Scripts.Animations
 
         private void OnDisable()
         {
-            _sequence.Kill();
+            _sequence.Pause();
         }
 
 #if UNITY_EDITOR

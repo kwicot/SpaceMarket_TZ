@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Zenject;
 
@@ -10,24 +9,12 @@ namespace SpaceMarket.Core.Scripts.Animations
         
         [Inject] private LevelService _levelService;
 
-        private Rigidbody _body;
-
-        private void Start()
-        {
-            TryGetComponent(out _body);
-        }
-        
 
         private void FixedUpdate()
         {
             if (_levelService.IsPlaying)
             {
-                var rotation = transform.rotation.eulerAngles;
-                rotation += rotationAxis * Time.fixedDeltaTime;
-                if (_body)
-                    _body.MoveRotation(Quaternion.Euler(rotation));
-                else
-                    transform.Rotate(rotation);
+                transform.Rotate(rotationAxis * Time.fixedDeltaTime);
             }
         }
     }

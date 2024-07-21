@@ -128,7 +128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4457681554010073368, guid: 960296bf22e2d814cab4af5fedb875df, type: 3}
       propertyPath: spawnChance
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4457681554010073374, guid: 960296bf22e2d814cab4af5fedb875df, type: 3}
       propertyPath: m_Name
@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4457681554010073375, guid: 960296bf22e2d814cab4af5fedb875df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 4457681554010073375, guid: 960296bf22e2d814cab4af5fedb875df, type: 3}
       propertyPath: m_LocalRotation.w

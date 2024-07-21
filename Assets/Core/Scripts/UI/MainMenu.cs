@@ -1,8 +1,10 @@
 ﻿using System;
 using SpaceMarket.Core.Scipts.Extensions;
+using SpaceMarket.Core.Scripts.Popup.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 namespace SpaceMarket.Core.Scripts.UI
 {
@@ -11,15 +13,16 @@ namespace SpaceMarket.Core.Scripts.UI
         [SerializeField] private Button playButton;
         [SerializeField] private Button exitButton;
         [SerializeField] private SceneReference gameScene;
+        [Inject] private PopupLoadingService _loadingService;
 
 
         private void Start()
         {
-            playButton.RemoveAllListeners();
-            playButton.AddListener(Play);
+            if (_loadingService.IsShowing)
+                _loadingService.Hide();
             
-            exitButton.RemoveAllListeners();
-            exitButton.AddListener(Exit);
+            playButton.RemoveAllListeners().AddListener(Play);
+            exitButton.RemoveAllListeners().AddListener(Exit);
         }
 
         private void OnDestroy()
@@ -29,8 +32,9 @@ namespace SpaceMarket.Core.Scripts.UI
         }
 
 
-        public void Play()
+        public async void Play()
         {
+            await _loadingService.Show();
             SceneManager.LoadSceneAsync(gameScene);
         }
 

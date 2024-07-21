@@ -8,7 +8,7 @@ namespace SpaceMarket.Core.Scripts
     public class LevelService : MonoBehaviour
     {
         private int _score;
-        private bool _isPlaying = true;
+        private bool _isPlaying;
         
         public int Score
         {
@@ -31,6 +31,7 @@ namespace SpaceMarket.Core.Scripts
         
         public UnityAction OnPlayingStateChanged;
         public UnityAction OnScoreChanged;
+        public UnityAction OnEndGame;
 
 
         public void Play()
@@ -43,15 +44,10 @@ namespace SpaceMarket.Core.Scripts
             IsPlaying = false;
         }
 
-        public void ReturnToMenu()
-        {
-            
-        }
-        
         public void OnPlayerHit()
         {
             IsPlaying = false;
-            Debug.Log("Lose");
+            OnEndGame?.Invoke();
         }
 
         public void OnPlayerCollect(ICollectableItem item)

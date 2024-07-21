@@ -11,7 +11,7 @@ namespace Core.Scripts
 {
     public class AppService : MonoBehaviour
     {
-        [SerializeField] private SceneReference menuScene;
+        [SerializeField] public SceneReference menuScene;
         [Inject] private PopupLoadingService _loadingService;
         
         private async void Start()
@@ -19,7 +19,6 @@ namespace Core.Scripts
             WebView.OnClose += OnWebViewClose; //TODO переробити якщо треба не тільки тут
             
             _loadingService.Show();
-            await Task.Delay(3000);
             
             if(Application.internetReachability == NetworkReachability.NotReachable)
             {
@@ -31,7 +30,7 @@ namespace Core.Scripts
             
             
             var countryData = await GeoManager.GetCountry();
-            await _loadingService.Hide();
+            await Task.Delay(500);
 
             Debug.Log($"Country {countryData.CountryISO}");
             if (countryData.CountryISO == CountryISO.UA)

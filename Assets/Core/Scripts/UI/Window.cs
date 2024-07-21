@@ -17,18 +17,24 @@ namespace SpaceMarket.Core.Scipts.UI
 
         public void Show()
         {
-            foreach (var windowAnimation in _windowAnimations)
-                windowAnimation.PlayShowAnimation();
-            
+            if (_windowAnimations != null)
+            {
+                foreach (var windowAnimation in _windowAnimations)
+                    windowAnimation.PlayShowAnimation();
+            }
+
             OnShow();
         }
 
         public void Hide()
         {
             OnHide();
-            
-            foreach (var windowAnimation in _windowAnimations)
-                windowAnimation.PlayHideAnimation();
+
+            if (_windowAnimations != null)
+            {
+                foreach (var windowAnimation in _windowAnimations)
+                    windowAnimation.PlayHideAnimation();
+            }
         }
         protected virtual void OnStart(){}
         

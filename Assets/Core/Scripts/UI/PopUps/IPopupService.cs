@@ -4,7 +4,8 @@ namespace SpaceMarket.Core.Scripts.Popup.UI
 {
     public interface IPopupService
     {
-        public Task Show();
-        public Task Hide();
+        public bool IsShowing { get; }
+        public Task Show(int delayMs);
+        public Task Hide(int delayMs);
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497774073375378262}
-  - component: {fileID: 8028749724923357312}
+  - component: {fileID: 5728514064312785600}
   m_Layer: 0
   m_Name: LinerObstacle_03
   m_TagString: Obstacle
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8028749724923357312
+--- !u!54 &5728514064312785600
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +48,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 14
   m_CollisionDetection: 1
 --- !u!1001 &5386445659304084113
 PrefabInstance:
@@ -63,7 +63,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604874113214676048, guid: fa981ef473825ec47a1cde0ec274cfec, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 3604874113214676049, guid: fa981ef473825ec47a1cde0ec274cfec, type: 3}
       propertyPath: firstLocalPoint.x
@@ -137,7 +137,8 @@ PrefabInstance:
       propertyPath: secondLocalPoint.x
       value: -1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7606850933992712822, guid: fa981ef473825ec47a1cde0ec274cfec, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa981ef473825ec47a1cde0ec274cfec, type: 3}
 --- !u!4 &8703041498354728644 stripped
 Transform:
@@ -157,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604874113214676048, guid: fa981ef473825ec47a1cde0ec274cfec, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 3604874113214676049, guid: fa981ef473825ec47a1cde0ec274cfec, type: 3}
       propertyPath: firstLocalPoint.x
@@ -227,7 +228,8 @@ PrefabInstance:
       propertyPath: secondLocalPoint.x
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7606850933992712822, guid: fa981ef473825ec47a1cde0ec274cfec, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa981ef473825ec47a1cde0ec274cfec, type: 3}
 --- !u!4 &5386445658062504932 stripped
 Transform:

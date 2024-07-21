@@ -6,28 +6,34 @@ namespace SpaceMarket.Core.Scipts.Extensions
 {
     public static class ButtonExtension
     {
-        public static void RemoveAllListeners(this Button button)
+        public static Button RemoveAllListeners(this Button button)
         {
             if(button != null)
                 button.onClick.RemoveAllListeners();
             else
                 Debug.LogWarning("Try remove all listeners from null button");
+
+            return button;
         }
 
-        public static void AddListener(this Button button, UnityAction action)
+        public static Button AddListener(this Button button, UnityAction action)
         {
             if (button != null)
                 button.onClick.AddListener(action);
             else
                 Debug.LogWarning("Try add listener to null button");
+
+            return button;
         }
 
-        public static void RemoveListener(this Button button, UnityAction action)
+        public static Button RemoveListener(this Button button, UnityAction action)
         {
             if (button != null)
                 button.onClick.RemoveListener(action);
             else
                 Debug.LogWarning("Try remove listener from null button");
+
+            return button;
         }
     }
 }
