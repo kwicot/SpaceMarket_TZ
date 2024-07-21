@@ -1,8 +1,10 @@
-﻿namespace SpaceMarket.Core.Scripts.Popup.UI
+﻿using System.Threading.Tasks;
+
+namespace SpaceMarket.Core.Scripts.Popup.UI
 {
     public interface IPopupService
     {
-        public void Show();
-        public void Close();
+        public Task Show();
+        public Task Hide();
     }
 }

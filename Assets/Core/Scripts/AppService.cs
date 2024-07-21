@@ -17,7 +17,7 @@ namespace Core.Scripts
             _loadingService.Show();
             await Task.Delay(3000);
             var countryData = await GeoManager.GetCountry();
-            _loadingService.Close();
+            await _loadingService.Hide();
             
             if (countryData.CountryISO == CountryISO.UA)
             {

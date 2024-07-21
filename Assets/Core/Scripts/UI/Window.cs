@@ -1,15 +1,16 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SpaceMarket.Core.Scipts.UI
 {
     public abstract class Window : MonoBehaviour
     {
+        [SerializeField]
+        protected GameObject _rootPanel;
         protected IWindowAnimation[] _windowAnimations;
 
         private void Start()
         {
-            _windowAnimations = GetComponentsInChildren<IWindowAnimation>();
+            _windowAnimations = _rootPanel.GetComponentsInChildren<IWindowAnimation>();
             OnStart();
         }
 

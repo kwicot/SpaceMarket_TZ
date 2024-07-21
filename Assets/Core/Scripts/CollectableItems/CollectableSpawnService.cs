@@ -58,7 +58,6 @@ namespace Core.Scripts.Collectable
         
         public GameObject GetRandom()
         {
-            Debug.Log("Get Random");
             if(!_initialized)
                 Initialize();
             

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using DG.Tweening;
 using SpaceMarket.Core.Scipts.UI;
 using SpaceMarket.Core.Scripts.Extensions;
@@ -19,17 +20,17 @@ namespace Core.Scripts
                 throw new NullReferenceException($"Cant find component of type CanvasGroup on {name}");
         }
 
-        public void PlayShowAnimation()
+        public async Task PlayShowAnimation()
         {
             gameObject.Enable();
             _canvasGroup.alpha = 0;
-            _canvasGroup.DOFade(1, duration);
+            await _canvasGroup.DOFade(1, duration).AsyncWaitForCompletion();
         }
 
-        public void PlayHideAnimation()
+        public async Task PlayHideAnimation()
         {
             _canvasGroup.alpha = 1;
-            _canvasGroup.DOFade(0, duration).onComplete += () => gameObject.Disable();
+            await _canvasGroup.DOFade(0, duration).AsyncWaitForCompletion();
         }
     }
 }

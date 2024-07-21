@@ -4,7 +4,7 @@ namespace SpaceMarket.Core.Scipts.UI
 {
     public interface IWindowAnimation
     {
-        public void PlayShowAnimation();
-        public void PlayHideAnimation();
+        public Task PlayShowAnimation();
+        public Task PlayHideAnimation();
     }
 }

@@ -1,4 +1,5 @@
-﻿using Core.Scripts.Collectable;
+﻿using System;
+using Core.Scripts.Collectable;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,7 @@ namespace SpaceMarket.Core.Scripts
     public class LevelService : MonoBehaviour
     {
         private int _score;
-        private bool _isPlaying = false;
+        private bool _isPlaying = true;
         
         public int Score
         {
@@ -56,6 +57,19 @@ namespace SpaceMarket.Core.Scripts
         public void OnPlayerCollect(ICollectableItem item)
         {
             Score += item.ScoreGain;
+        }
+
+        private void OnApplicationPause(bool pauseStatus)
+        {
+            Pause();
+        }
+
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            if(hasFocus)
+                Play();
+            else
+                Pause();
         }
     }
 }

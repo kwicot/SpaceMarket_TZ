@@ -1,5 +1,7 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
+using Zenject;
 using Sequence = DG.Tweening.Sequence;
 
 #if UNITY_EDITOR
@@ -16,8 +18,23 @@ namespace SpaceMarket.Core.Scripts.Animations
         [SerializeField] private float moveInterval;
         [SerializeField] private Ease ease;
 
+        [Inject] private LevelService _levelService;
+
         private Sequence _sequence;
-        
+
+        private void Start()
+        {
+            _levelService.OnPlayingStateChanged += OnLevelStateChange;
+        }
+
+        private void OnLevelStateChange()
+        {
+            if (_levelService.IsPlaying)
+                _sequence.Play();
+            else
+                _sequence.Pause();
+        }
+
         private void OnEnable()
         {
             transform.localPosition = secondLocalPoint;
@@ -35,6 +52,7 @@ namespace SpaceMarket.Core.Scripts.Animations
         private void OnDestroy()
         {
             _sequence.Kill();
+            _levelService.OnPlayingStateChanged -= OnLevelStateChange;
         }
 
         private void OnDisable()

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using DG.Tweening;
 using SpaceMarket.Core.Scipts.UI;
 using SpaceMarket.Core.Scripts.Extensions;
@@ -18,21 +20,29 @@ namespace SpaceMarket.Core.Scripts.Popup.UI
             _animations = GetComponentsInChildren<IWindowAnimation>();
         }
 
-        public void Show()
+        public async Task Show()
         {
             rootPanel.Enable();
+
+            List<Task> tasks = new List<Task>();
             foreach (var windowAnimation in _animations)
             {
-                windowAnimation.PlayShowAnimation();
+                tasks.Add(windowAnimation.PlayShowAnimation());
             }
+            
+            await Task.WhenAll(tasks);
         }
 
-        public void Close()
+        public async Task Hide()
         {
+            List<Task> tasks = new List<Task>();
             foreach (var windowAnimation in _animations)
             {
-                windowAnimation.PlayHideAnimation();
+                tasks.Add(windowAnimation.PlayHideAnimation());
             }
+            
+            await Task.WhenAll(tasks);
+            rootPanel.Disable();
         }
     }
 }
