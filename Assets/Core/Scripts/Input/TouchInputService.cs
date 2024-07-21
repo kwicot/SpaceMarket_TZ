@@ -12,10 +12,12 @@ namespace SpaceMarket.Core.Scripts.Obstacles.UI
         public float Vertical { get; private set; }
 
         private float _inputOffset;
+        private float _screenSize;
 
         private void Start()
         {
-            _inputOffset = Screen.width / 2f;
+            _screenSize = Screen.width;
+            _inputOffset = _screenSize / 2f;
         }
         
         public void UpdateInput()

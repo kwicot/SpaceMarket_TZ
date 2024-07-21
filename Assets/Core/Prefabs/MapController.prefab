@@ -49,6 +49,9 @@ MonoBehaviour:
   - {fileID: 6466175276430682159, guid: 4a76658351cf2c244813e3c4bc7457b6, type: 3}
   - {fileID: 3152460885543840844, guid: 7e32c53f98ffa074e8da2d9b7389bf98, type: 3}
   - {fileID: 7511236876052010246, guid: f2d222c3c27b6e34ca842979d8d555e5, type: 3}
+  - {fileID: 5450747503332938977, guid: a75075a0ddafe854bab7e534e98da2e8, type: 3}
+  - {fileID: 174744026736804222, guid: 5d5bf41fbe23b4f45915f5a22f821998, type: 3}
+  - {fileID: 6094892589772972270, guid: 17fa132d4fa67604c8aad6cd2f1dee65, type: 3}
   freePlatformPrefab: {fileID: 4566361209151938103, guid: 4cd6b081dbd499a45a34830843532885, type: 3}
   freePlatformsCount: 3
   playerTransform: {fileID: 0}

@@ -1,5 +1,6 @@
 ﻿using SpaceMarket.Core.Scripts.Extensions;
 using ToolBox.Pools;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -13,7 +14,8 @@ namespace Core.Scripts.Collectable
 
         [Inject]private CollectableSpawnService _spawnService;
 
-        private void Start()
+
+        private async void OnEnable()
         {
             int r = Random.Range(0, 100);
             if (r <= spawnChance)
@@ -22,11 +24,6 @@ namespace Core.Scripts.Collectable
                 obj.Reuse(transform.position + spawnOffset, Quaternion.identity);
                 obj.Enable();
             }
-        }
-
-        private async void OnEnable()
-        {
-            
         }
 
     }

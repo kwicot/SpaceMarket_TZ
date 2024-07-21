@@ -37,7 +37,9 @@ namespace SpaceMarket.Core.Scripts.UI
             
             if (_loadingService.IsShowing)
                 await _loadingService.Hide();
+            
             _levelService.Play();
+            OnScoreChanged();
         }
 
         private void OnEndGame()

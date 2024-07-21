@@ -11,8 +11,9 @@ namespace SpaceMarket.Core.Scripts.Obstacles
     public class MovementController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed;
-        [SerializeField] private float multiplier;
         [SerializeField] private float positionY;
+        [SerializeField] private float minPositionX;
+        [SerializeField] private float maxPositionX;
 
         private Rigidbody _rigidbody;
 
@@ -22,6 +23,7 @@ namespace SpaceMarket.Core.Scripts.Obstacles
 
         private float _positionX;
         private float _positionZ;
+        private float _screenSizeX;
 
 
         [Inject]
@@ -42,6 +44,8 @@ namespace SpaceMarket.Core.Scripts.Obstacles
             {
                 _movementInputService.UpdateInput();
                 _positionX = _movementInputService.Horizontal;
+                if(_positionX < minPositionX) _positionX = minPositionX;
+                if(_positionX > maxPositionX) _positionX = maxPositionX;
             }
         }
 
@@ -52,7 +56,6 @@ namespace SpaceMarket.Core.Scripts.Obstacles
                 _positionZ = transform.position.z;
                 _positionZ += moveSpeed * Time.fixedDeltaTime;
                 
-
                 var position = new Vector3(_positionX, positionY, _positionZ);
                 _rigidbody.MovePosition(position);
             }
