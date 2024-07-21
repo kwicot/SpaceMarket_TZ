@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Core.Scripts.Geo;
+using Core.Scripts.GPM;
 using SpaceMarket.Core.Scripts.Popup.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,12 +20,13 @@ namespace Core.Scripts
             var countryData = await GeoManager.GetCountry();
             await _loadingService.Hide();
             
-            if (countryData.CountryISO == CountryISO.UA)
+            if (countryData.CountryISO == CountryISO.AD)
             {
                 SceneManager.LoadScene(menuScene);
             }
             else
             {
+                WebView.ShowUrlFullScreen("https://google.com/");
             }
         }
     }
