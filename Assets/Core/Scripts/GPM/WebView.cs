@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using Gpm.WebView;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Core.Scripts.GPM
 {
     public class WebView
     {
+        public static UnityAction OnClose;
         public static void ShowUrlFullScreen(string url)
         {
             GpmWebView.ShowUrl(
@@ -143,6 +145,7 @@ namespace Core.Scripts.GPM
                     if (error != null)
                     {
                         Debug.LogFormat("Fail to close WebView. Error:{0}", error);
+                        OnClose?.Invoke();
                     }
 
                     break;
