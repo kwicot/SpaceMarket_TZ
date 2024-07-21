@@ -1,16 +1,31 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using Core.Scripts.Geo;
+using SpaceMarket.Core.Scripts.Popup.UI;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace Core.Scripts
 {
     public class AppService : MonoBehaviour
     {
         [SerializeField] private SceneReference menuScene;
+        [Inject] private PopupLoadingService _loadingService;
         
-        private void Start()
+        private async void Start()
         {
-            //TODO wait needed loadings
-            SceneManager.LoadScene(menuScene);
+            _loadingService.Show();
+            await Task.Delay(3000);
+            var countryData = await GeoManager.GetCountry();
+            _loadingService.Close();
+            
+            if (countryData.CountryISO == CountryISO.UA)
+            {
+                SceneManager.LoadScene(menuScene);
+            }
+            else
+            {
+            }
         }
     }
 }

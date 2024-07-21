@@ -1,30 +1,38 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
+using SpaceMarket.Core.Scipts.UI;
 using SpaceMarket.Core.Scripts.Extensions;
 using UnityEngine;
+using Zenject;
 
 namespace SpaceMarket.Core.Scripts.Popup.UI
 {
     public class PopupLoadingService : MonoBehaviour, IPopupService
     {
         [SerializeField] private GameObject rootPanel;
-        [SerializeField] CanvasGroup canvasGroup;
-        [SerializeField] float fadeDuration = 0.5f;
-        
+
+        private IWindowAnimation[] _animations;
+
+        private void Awake()
+        {
+            _animations = GetComponentsInChildren<IWindowAnimation>();
+        }
+
         public void Show()
         {
             rootPanel.Enable();
-            canvasGroup.DOFade(1, fadeDuration);
+            foreach (var windowAnimation in _animations)
+            {
+                windowAnimation.PlayShowAnimation();
+            }
         }
 
         public void Close()
         {
-            canvasGroup.DOFade(0, fadeDuration).onComplete += () => { rootPanel.Disable(); };
-        }
-
-        private void OnDisable()
-        {
-            canvasGroup.alpha = 0;
-            rootPanel.Disable();
+            foreach (var windowAnimation in _animations)
+            {
+                windowAnimation.PlayHideAnimation();
+            }
         }
     }
 }

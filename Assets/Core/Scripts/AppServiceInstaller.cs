@@ -9,7 +9,7 @@ namespace SpaceMarket.Core.Scipts
         [SerializeField] private AppService appService; 
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<AppService>().FromInstance(appService).AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<AppService>().FromComponentInNewPrefab(appService).AsSingle().NonLazy();
         }
     }
 }

@@ -196,6 +196,8 @@ GameObject:
   - component: {fileID: 1316569805896798016}
   - component: {fileID: 1316569805896798019}
   - component: {fileID: 2776344644343422781}
+  - component: {fileID: 4545772049575933938}
+  - component: {fileID: 5693003970534704329}
   m_Layer: 5
   m_Name: Loading_Service
   m_TagString: Untagged
@@ -298,5 +300,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootPanel: {fileID: 1316569804719644442}
-  canvasGroup: {fileID: 3948502670944199351}
-  fadeDuration: 0.5
+--- !u!225 &4545772049575933938
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316569805896798018}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &5693003970534704329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316569805896798018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540426a780384868a13311fdceb9444d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
