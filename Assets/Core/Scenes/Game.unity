@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926c3d53b20a47ba9a3a7ab121e880b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 6
   positionY: 0.6
   minPositionX: -4.5
   maxPositionX: 4.5
@@ -2344,6 +2344,22 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1337865626}
+    - target: {fileID: 513455682852494237, guid: 2af2b8c29830e104893f38cfbe23b96b, type: 3}
+      propertyPath: platformPrefabs.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 513455682852494237, guid: 2af2b8c29830e104893f38cfbe23b96b, type: 3}
+      propertyPath: platformPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 6094892589772972270, guid: db7a79cbaaff88844a9f7a7a76dcc546, type: 3}
+    - target: {fileID: 513455682852494237, guid: 2af2b8c29830e104893f38cfbe23b96b, type: 3}
+      propertyPath: platformPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 6094892589772972270, guid: 7026fe17ad6745d4ebe1578aafed8a8c, type: 3}
+    - target: {fileID: 513455682852494237, guid: 2af2b8c29830e104893f38cfbe23b96b, type: 3}
+      propertyPath: platformPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 6094892589772972270, guid: 9f2e75decc4c54a4e9e8fd01c8596008, type: 3}
     - target: {fileID: 513455682852494238, guid: 2af2b8c29830e104893f38cfbe23b96b, type: 3}
       propertyPath: m_RootOrder
       value: 4

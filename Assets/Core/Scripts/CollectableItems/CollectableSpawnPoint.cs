@@ -1,4 +1,5 @@
-﻿using SpaceMarket.Core.Scripts.Extensions;
+﻿using System.Threading.Tasks;
+using SpaceMarket.Core.Scripts.Extensions;
 using ToolBox.Pools;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,12 +18,15 @@ namespace Core.Scripts.Collectable
 
         private async void OnEnable()
         {
+            await Task.Delay(200); //Костиль. На ліпший варіант треба більше часу. Для тестового підійде. В ідеалі треба прописати ініціалізацію в скрипт платформи
             int r = Random.Range(0, 100);
+            Debug.Log($"R: {r} chance: {spawnChance}");
             if (r <= spawnChance)
             {
                 var obj = _spawnService.GetRandom();
                 obj.Reuse(transform.position + spawnOffset, Quaternion.identity);
                 obj.Enable();
+                Debug.Log(obj.name);
             }
         }
 

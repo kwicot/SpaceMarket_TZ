@@ -35,11 +35,12 @@ namespace SpaceMarket.Core.Scripts.UI
             _levelService.OnScoreChanged += OnScoreChanged;
             _levelService.OnEndGame += OnEndGame;
             
+            OnScoreChanged();
+
             if (_loadingService.IsShowing)
                 await _loadingService.Hide();
             
             _levelService.Play();
-            OnScoreChanged();
         }
 
         private void OnEndGame()

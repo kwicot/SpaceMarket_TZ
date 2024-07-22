@@ -128,7 +128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4457681554010073368, guid: 960296bf22e2d814cab4af5fedb875df, type: 3}
       propertyPath: spawnChance
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4457681554010073374, guid: 960296bf22e2d814cab4af5fedb875df, type: 3}
       propertyPath: m_Name
